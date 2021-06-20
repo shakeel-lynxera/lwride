@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    EAdda | Admin 
+{% endblock title %}
+
+{% block content-header %}
+    Ride Requests 
+{% endblock content-header %}
+
+{% block content %}
+
+   <div class="card">
+      <div class="card-header">
+        <h3 class="card-title"></h3>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+          <thead>
+          <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Status</th>
+            <th>Rider Name</th>
+            <td>Rider Phone</td>
+            <td>Rider Type</td>
+            <th colspan="2">Action</th>
+          </tr>
+          </thead>
+            <tbody>
+              {% for ride_object in ride_data %}
+              <tr>
+                <td>{{ride_object.pick_Up_Address}}</td>
+                <td>{{ride_object.drop_Off_Location}}</td>
+                <td>{{ride_object.status}}</td>
+                <td>{{ride_object.rider_name}}</td>
+                <td>{{ride_object.rider_phone}}</td>
+                <td>{{ride_object.ride_type}}</td>
+                <!-- <td>
+                  <a href="delete_object/id=ride_object.id"><button class="btn btn-danger">Delete</button></a>
+                </td> -->
+              </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+      </div>
+            <!-- /.card-body -->
+   </div>
+
+{% endblock content%}

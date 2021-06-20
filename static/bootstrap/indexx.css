@@ -1,0 +1,108 @@
+.logo{
+	padding-right: 50px;
+	padding-left: 50px;
+}
+.navbar-own{
+	background-color: #7575a3;
+}
+.navbar-own a{
+	color:#f0f0f5;
+	text-decoration: none;
+}
+
+.navbar-own ul li a:visited{
+	color:#f0f0f5;
+	background-color: #666699;
+}
+.navbar-own ul li a:hover{
+	background-color: #666699;
+}
+.banner{
+	padding:0px;
+	margin:0px;
+	margin-top: -20px;
+}
+.active{
+	background-color: #666699;
+}
+.mobile-models tr td div{
+	margin-left: 15px;
+}
+.bgBlue{
+	background-color: #7575a3;
+	color:white;
+}
+.centerr{
+	margin:auto;
+	margin-left: 23%;
+}
+.form-content{
+	background-color: #7575a3;
+	padding:30px;
+	color:white;
+	border-radius: 3px 50px 3px 150px;
+	box-shadow: 5px 15px 15px grey;
+	margin-top: -10px;
+}
+.login-form form{
+	margin-top: 30px;
+}
+.login-form{
+	background-color: #7575a3;
+	padding:30px;
+	color:white;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px grey;
+	margin-top: 100px;	
+}
+.login-header p{
+	font-size: 20px;
+	color:white;
+	border-bottom: 1px solid white;
+	padding-bottom: 10px;
+}
+#login{
+	height: 100%;
+	width:100%;
+}
+.mobileName{
+	text-align: center;
+	border-radius:3px;
+	background-color:#7575a3;
+	color:white;
+	padding:10px;
+}
+.addMobile{
+	background-color:darkgray;
+	padding:10px;
+	color:white;
+}
+.addMobile:link{
+	text-decoration: none;
+	color:white;
+}
+#samsung-content, #iphone-content{
+	margin-top: 100px;
+}
+#iphone-content, #feedback-content{
+	display: none;
+}{
+	display: none;
+}
+#SamsungupdateForm{
+	margin-top: 100px;
+}
+.btn-own{
+	background-color: #7575a3;
+	border:1px solid #7575a3;
+	color:white;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+.btn-own:hover{
+	color:#f2f2f2;
+}
+.res{
+	height: 100%:
+	width:100%;
+}

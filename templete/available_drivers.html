@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    EAdda | Admin 
+{% endblock title %}
+
+{% block content-header %}
+    Available Drivers 
+{% endblock content-header %}
+
+{% block content %}
+
+   <div class="card">
+      <div class="card-header">
+        <h3 class="card-title"></h3>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+          <thead>
+          <tr>
+            <th>Lat</th>
+            <th>Lng</th>
+          </tr>
+          </thead>
+            <tbody>
+              {% for data in drivers_data %}
+              <tr>
+                <td>{{data.l.0}}</td>
+                <td>{{data.l.1}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+      </div>
+            <!-- /.card-body -->
+   </div>
+
+{% endblock content%}

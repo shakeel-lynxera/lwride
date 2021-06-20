@@ -1,0 +1,32 @@
+{% load static %}
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}"/>
+	<script src="{% static 'bootstrap/jquery.js' %}"></script>
+	<script src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
+	<link rel="stylesheet" href="{% static 'bootstrap/indexx.css' %}"/>	
+
+</head>
+<body>
+
+	<nav class="navbar navbar-own">
+	  <div class="container-fluid">
+	    <div class="navbar-header logo">
+	      <a class="navbar-brand" href="">Logo</a>
+	    </div>
+
+	    <ul class="nav navbar-nav">
+	      <li><a href="">Home</a></li>
+	      <li><a href="">Our Misson</a></li>
+	      <li><a href="">About Us</a></li>
+	      <li><a href="">Contact Us</a></li>
+	    </ul>
+	  </div>
+	</nav>
+
+	<div class="banner col-md-12">
+		<img class="img" src="{% static 'dist/img/eAdda/home.jpg' %}" width="100%" height="91.7%" alt="Chania">
+	</div>
+</body>
+</html>

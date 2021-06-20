@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    EAdda | Admin 
+{% endblock title %}
+
+{% block content-header %}
+    Driver List 
+{% endblock content-header %}
+
+{% block content %}
+
+   <div class="card">
+      <div class="card-header">
+        <input type="text" class="form-control pull-right col-md-6" id="myInputRating" onkeyup="myFunctionRating()" placeholder="Search for rating..."><br>
+        <h3 class="card-title"></h3>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <input type="text" class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Search for phone number.."><br>
+        <table id="example1" class="table table-bordered table-striped small text-center">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Ratings</th>
+            <th>Vehicle Model</th>
+            <th>Vehicle Color</th>
+            <th>V-Number</th>
+            <th>Ride Type</th>
+            <th>History</th>
+            <th colspan="1">Action</th>
+          </tr>
+          </thead>
+            <tbody>
+              
+              {% for driver in drivers_data %}
+              <tr>
+                <td>{{driver.name}}</td>
+                <td>{{driver.phone}}</td>
+                <td>{{driver.email}}</td>
+                <td>{{driver.ratings}}</td>
+                <td>{{driver.car_details.car_model}}</td>
+                <td>{{driver.car_details.car_color}}</td>
+                <td>{{driver.car_details.car_number}}</td>
+                <td>{{driver.car_details.ride_type}}</td>
+                <td><button class="btn btn-default">View</button></td>
+                <!-- <td>
+                  <button class="btn btn-danger">Delete</button>
+                </td> -->
+              </tr>
+              {% endfor %}
+              
+              
+              
+            </tbody>
+        </table>
+
+          <div class="modal" id="myModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Blocking Reason</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                  <form action="addToBlockCaptain" method="post" accept-charset="utf-8">
+                    {% csrf_token %}
+                    <input type="text" id="id" hidden name="id"><br>
+                    Reason: <textarea class="form-control" rows="3" placeholder="Enter ..." name="reason"></textarea><br>
+                    <button class="btn btn-danger" type="submit">Block</button>
+                  </form>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+      </div>
+            <!-- /.card-body -->
+   </div>
+          <!-- /.card -->
+
+<script>
+
+  function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("example1");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+
+  function myFunctionRating() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInputRating");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("example1");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[8];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+  
+  function getId(data){
+    document.getElementById('id').value = data;
+  }
+
+</script>
+
+{% endblock content%}
